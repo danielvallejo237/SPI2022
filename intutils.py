@@ -1,3 +1,7 @@
+'''
+@Author danielvallejo237
+'''
+
 import fasttext
 import fasttext.util
 import numpy as np
