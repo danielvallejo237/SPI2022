@@ -30,8 +30,8 @@ def similaridad_frase(s1,s2,FT=ft):
     v2=return_significant_vector(s2,FastText=FT)
     return cossine_distance(v1,v2),distance.euclidean(v1,v2)
 
-saludos=["buenas tardes","buenos dias","hola","buenas noches","hola que tal","hola buenas tardes","Hola Garambubot"]
-despedidas=["adios","hasta luego","hasta pronto","nos vemos","chao","bye"]
+saludos=["buenas tardes","buenos dias","hola","buenas noches","hola que tal","hola buenas tardes","Hola Garambubot", "¡Hola, buenos días!" , "¡Hola, buenas tardes!" , "¡Hola, buenas noches!" , "¿Cómo estás?" , "¿Qué tal?" ,  "¿Qué pasa?" , "¡Hola, buenas!", "¿Cómo vas?" , "Hola, ¿qué tal?", "Hola, qué tal estás?" ,  "¿Qué hay?" , "¡Buenas!" ]
+despedidas=["adios","hasta luego","hasta pronto","nos vemos","chao","bye","cuidate","hasta ahora","¡Adiós, hasta luego!" , "¡Adiós, buenos días!" , "¡Adiós, buenas tardes!" , "¡Adiós, buenas noches!" , "Saludos"]
 
 def IntGen(frase,greet,desp,fst=ft):
     gscores=[]
@@ -64,7 +64,7 @@ def hasHashTag(string):
     return len(re.findall(r"#[\w]+",string))>0
 
 def IntEspecificas(frase,greet=saludos,desp=despedidas,fst=ft):
-    frase=unidecode.unidecode(frase)
+    frase=unidecode.unidecode(frase.lower())
     intencion=IntGen(frase,greet,desp,fst)
     if intencion==3:
         if hasHashTag(frase):
