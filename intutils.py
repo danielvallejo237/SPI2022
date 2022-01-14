@@ -9,6 +9,9 @@ from scipy.spatial import distance
 import re
 import unidecode
 
+#fasttext.util.download_model('es', if_exists='ignore')
+#ft=fasttext.load_model('cc.en.300.bin')
+#fasttext.util.reduce_model(ft, 100)
 ft = fasttext.load_model('/home/danielvaal/fastText/cc.es.100.bin')
 
 def return_significant_vector(string,FastText=ft):
