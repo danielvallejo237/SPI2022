@@ -1,2 +1,2 @@
 # SPI2022
-Códigos de proyecto Garambullo elaborados por @danielvallejo237
+Códigos de proyecto Garambullo para el Garambubot
